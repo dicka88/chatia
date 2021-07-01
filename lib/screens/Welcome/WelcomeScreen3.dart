@@ -31,13 +31,23 @@ class WelcomeScreen3 extends StatelessWidget {
               child: Image.asset('assets/images/illustration/party.png'),
             ),
             SizedBox(height: 50),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (builder) => new LoginScreen()));
-              },
-              child: Text("Get started"),
-              style: ButtonStyle(),
+            Container(
+              width: 333,
+              height: 57,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => new LoginScreen()));
+                },
+                child: Text("Lets go",
+                    style: TextStyle(color: Colors.white, fontSize: 32)),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    side: BorderSide(color: Colors.white, width: 3)),
+              ),
             )
           ],
         ),
