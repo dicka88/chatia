@@ -25,11 +25,6 @@ class _PageView extends State<WelcomeScreen> {
   @override
   void initState() {
     super.initState();
-
-    new Timer(Duration(seconds: 1), () {
-      print("Horrra");
-      this.changePage(1);
-    });
   }
 
   void changePage(int pageIndex) {
