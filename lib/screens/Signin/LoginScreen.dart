@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   // LoginScreen(Key? key) : super(key: key);
@@ -62,9 +63,21 @@ class LoginState extends State<LoginScreen> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20)))),
                         onPressed: () {},
-                        child: Text("Signin with Phone",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(right: 16, left: 16),
+                              child: Icon(Icons.phone),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("Signin with Phone",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -78,9 +91,18 @@ class LoginState extends State<LoginScreen> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)))),
                           onPressed: () {},
-                          child: Text("Signin with Google",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20))))
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(right: 16, left: 16),
+                                child: FaIcon(FontAwesomeIcons.google),
+                              ),
+                              Text("Signin with Google",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                            ],
+                          )))
                 ],
               ),
             ),
@@ -89,7 +111,6 @@ class LoginState extends State<LoginScreen> {
                 child: Text("or",
                     style: TextStyle(color: Colors.blueAccent, fontSize: 20))),
             Container(
-              margin: EdgeInsets.only(top: 30),
               height: 53,
               width: 291,
               child: ElevatedButton(
@@ -102,7 +123,7 @@ class LoginState extends State<LoginScreen> {
                         fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
-                      shadowColor: Colors.white,
+                      shadowColor: Colors.transparent,
                       primary: Colors.white,
                       side: BorderSide(color: Colors.blueAccent, width: 1),
                       shape: RoundedRectangleBorder(
