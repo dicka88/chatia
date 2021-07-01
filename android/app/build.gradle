@@ -34,12 +34,21 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.chatia"
+        applicationId "com.wespeedup.chatia"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+
+    // productFlavours {
+    //     free {
+    //         applicationIdSuffix ".free"
+    //     }
+    //     pro {
+    //         applicationIdSuffix ".pro"
+    //     }
+    // }
 
     buildTypes {
         release {
