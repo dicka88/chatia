@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Signin/LoginScreen.dart';
 
 class WelcomeScreen1 extends StatelessWidget {
   final controller;
@@ -49,7 +50,12 @@ class WelcomeScreen1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => LoginScreen()));
+                          },
                           child: Text("Skip",
                               style: TextStyle(
                                   fontSize: 24,

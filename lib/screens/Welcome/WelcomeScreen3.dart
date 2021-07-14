@@ -32,7 +32,7 @@ class WelcomeScreen3 extends StatelessWidget {
             ),
             SizedBox(height: 50),
             Container(
-              width: 333,
+              width: double.infinity,
               height: 57,
               child: ElevatedButton(
                 onPressed: () {
@@ -46,6 +46,8 @@ class WelcomeScreen3 extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
                     shadowColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
                     side: BorderSide(color: Colors.white, width: 3)),
               ),
             )
