@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wespeedup.chatia">
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.CAMERA" />
+   <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+   <uses-permission android:name="android.permission.READ_CONTACTS" />
    <application
         android:label="chatia"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
