@@ -12,12 +12,9 @@ class LoginScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         color: Colors.white,
-        padding: EdgeInsets.all(40),
+        padding: EdgeInsets.fromLTRB(40, 80, 40, 40),
         child: Column(
           children: [
-            SizedBox(
-              height: 40,
-            ),
             Padding(
               padding: const EdgeInsets.only(bottom: 40),
               child: Align(
@@ -35,7 +32,7 @@ class LoginScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Login into your accunt",
+                "Login into your account",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -43,9 +40,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 290,
-            ),
+            Expanded(child: Container()),
             Padding(
               padding: EdgeInsets.only(bottom: 30),
               child: Column(

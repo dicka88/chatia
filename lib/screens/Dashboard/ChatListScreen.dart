@@ -198,7 +198,7 @@ class ChatListScreenState extends State<ChatListScreen> {
             ),
           ),
           Expanded(
-            flex: 1,
+            flex: 2,
             child: SizedBox(
               width: 40,
               child: Column(
@@ -214,7 +214,7 @@ class ChatListScreenState extends State<ChatListScreen> {
                             unreadCount.toString(),
                             style: TextStyle(color: Colors.white, fontSize: 12),
                           )
-                        : null,
+                        : Container(),
                   )
                 ],
               ),

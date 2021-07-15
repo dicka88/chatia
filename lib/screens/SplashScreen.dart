@@ -25,13 +25,14 @@ class SplashState extends State<SplashScreeen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.all(47),
         color: Colors.white,
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: 237),
-            Image.asset('assets/images/logo.png'),
-            SizedBox(height: 328),
+            Expanded(
+              child: Image.asset('assets/images/logo.png'),
+            ),
             Text("Copyright of"),
             Text(
               "Wespeedup",

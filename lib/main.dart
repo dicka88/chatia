@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Chatia Appchat',
+      title: 'Chatia',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         // textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme)
