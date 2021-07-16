@@ -169,23 +169,24 @@ class CallScreenState extends State<CallScreen> {
                           width: 50,
                           height: 50,
                           child: Container(
-                              margin: EdgeInsets.only(top: 4),
-                              decoration: BoxDecoration(
-                                color: Colors.blueAccent,
-                                shape: BoxShape.circle,
+                            margin: EdgeInsets.only(top: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              shape: BoxShape.circle,
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                showToast(
+                                  context: context,
+                                  message: "Phone calling soon",
+                                );
+                              },
+                              child: Icon(
+                                Icons.phone,
+                                color: Colors.white,
                               ),
-                              child: TextButton(
-                                onPressed: () {
-                                  showToast(
-                                    context: context,
-                                    message: "Phone calling soon",
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.phone,
-                                  color: Colors.white,
-                                ),
-                              )),
+                            ),
+                          ),
                         ),
                       )
                     ],

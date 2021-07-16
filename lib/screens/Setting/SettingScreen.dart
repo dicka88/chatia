@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class SettingScreen extends StatefulWidget {
-  @override
-  SettingScreenState createState() => SettingScreenState();
-}
+// class SettingScreen extends StatefulWidget {
+//   @override
+//   SettingScreenState createState() => SettingScreenState();
+// }
 
-class SettingScreenState extends State<SettingScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
+// class SettingScreenState extends State<SettingScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold();
+//   }
+// }
