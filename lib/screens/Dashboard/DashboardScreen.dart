@@ -4,6 +4,7 @@ import 'ChatListScreen.dart';
 import 'CallScreen.dart';
 import 'SearchOverlay.dart';
 
+import '../Contact/ContactScreen.dart';
 import '../Chat/ProfileScreen.dart';
 import '../Setting/SettingScreen.dart';
 
@@ -39,12 +40,28 @@ class DashboardScreenState extends State<DashboardScreen> {
   void popupMenuSelected(value) {
     switch (value) {
       case 'profile':
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (builder) => ProfileScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (builder) => ProfileScreen(),
+          ),
+        );
         break;
       case 'setting':
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (builder) => SettingScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (builder) => SettingScreen(),
+          ),
+        );
+        break;
+      case 'contact':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (builder) => ContactScreen(),
+          ),
+        );
         break;
       default:
         break;
@@ -70,7 +87,9 @@ class DashboardScreenState extends State<DashboardScreen> {
             backgroundColor: Colors.blueAccent,
             actions: [
               IconButton(
-                  onPressed: searchPressHandler, icon: Icon(Icons.search)),
+                onPressed: searchPressHandler,
+                icon: Icon(Icons.search),
+              ),
               PopupMenuButton(
                 itemBuilder: (context) => <PopupItem>[
                   PopupItem(

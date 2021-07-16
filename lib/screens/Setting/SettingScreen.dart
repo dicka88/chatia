@@ -1,13 +1,14 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class SettingScreen extends StatefulWidget {
-//   @override
-//   SettingScreenState createState() => SettingScreenState();
-// }
-
-// class SettingScreenState extends State<SettingScreen> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold();
-//   }
-// }
+class SettingScreen extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return WillPopScope(
+        child: Scaffold(
+          body: Center(child: Text("Soon")),
+        ),
+        onWillPop: () async {
+          Navigator.of(context).pop();
+          return true;
+        });
+  }
+}

@@ -138,8 +138,12 @@ class ChatListScreenState extends State<ChatListScreen> {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ChatScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChatScreen(),
+          ),
+        );
       },
       child: Container(
         padding: EdgeInsets.only(left: 24, top: 16, bottom: 16, right: 24),
@@ -151,7 +155,7 @@ class ChatListScreenState extends State<ChatListScreen> {
             flex: 1,
             child: GestureDetector(
               onTap: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (builder) => ProfileScreen(),
@@ -182,7 +186,9 @@ class ChatListScreenState extends State<ChatListScreen> {
                       child: Text(
                         name,
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 16),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),

@@ -1,7 +1,7 @@
 import 'package:chatia/helpers/ToastHelper.dart';
 import 'package:flutter/material.dart';
 
-import '../Chat/ProfileScreen.dart';
+// import '../Chat/ProfileScreen.dart';
 
 class CallScreen extends StatefulWidget {
   @override

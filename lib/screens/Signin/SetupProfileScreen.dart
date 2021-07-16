@@ -30,14 +30,16 @@ class SetupProfileState extends State<SetupProfile> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(
+    return WillPopScope(
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          body: SingleChildScrollView(
             child: Container(
-                width: double.infinity,
-                color: Colors.white,
-                padding: EdgeInsets.all(40),
-                child: Column(children: [
+              width: double.infinity,
+              color: Colors.white,
+              padding: EdgeInsets.all(40),
+              child: Column(
+                children: [
                   SizedBox(
                     height: 40,
                   ),
@@ -139,17 +141,18 @@ class SetupProfileState extends State<SetupProfile> {
                               letterSpacing: 1,
                               color: Colors.black),
                           decoration: InputDecoration(
-                              border: UnderlineInputBorder(),
-                              errorText: null,
-                              labelStyle: TextStyle(
-                                  fontSize: 24,
-                                  letterSpacing: 1,
-                                  color: Colors.grey),
-                              hintText: 'Your bio (optional)',
-                              hintStyle: TextStyle(
-                                  fontSize: 24,
-                                  letterSpacing: 1,
-                                  color: Colors.grey)),
+                            border: UnderlineInputBorder(),
+                            errorText: null,
+                            labelStyle: TextStyle(
+                                fontSize: 24,
+                                letterSpacing: 1,
+                                color: Colors.grey),
+                            hintText: 'Your bio (optional)',
+                            hintStyle: TextStyle(
+                                fontSize: 24,
+                                letterSpacing: 1,
+                                color: Colors.grey),
+                          ),
                         ),
                         Align(
                           alignment: Alignment.centerRight,
@@ -160,24 +163,29 @@ class SetupProfileState extends State<SetupProfile> {
                               width: 137,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: primaryColor,
-                                    shadowColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(20)))),
+                                  primary: primaryColor,
+                                  shadowColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                ),
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
                                     // goto dashboard
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) =>
-                                                DashboardScreen(
-                                                  key: Key("adada"),
-                                                  profileBio: _profileBio,
-                                                  profileName: _profileName,
-                                                  profileImage: _profileImage,
-                                                )));
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (builder) => DashboardScreen(
+                                          key: Key("adada"),
+                                          profileBio: _profileBio,
+                                          profileName: _profileName,
+                                          profileImage: _profileImage,
+                                        ),
+                                      ),
+                                      (route) => false,
+                                    );
                                   }
                                 },
                                 child: Row(
@@ -205,6 +213,14 @@ class SetupProfileState extends State<SetupProfile> {
                       ],
                     ),
                   ),
-                ]))));
+                ],
+              ),
+            ),
+          ),
+        ),
+        onWillPop: () async {
+          Navigator.pop(context);
+          return true;
+        });
   }
 }

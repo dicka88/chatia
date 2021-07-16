@@ -13,21 +13,22 @@ class ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     setState(() {
-      message = "Soon";
+      message = "Chat screen soon";
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: WillPopScope(
-        child: Container(
-          child: Text(message),
+    return WillPopScope(
+      child: Scaffold(
+        body: Container(
+          child: Center(child: Text(message)),
         ),
-        onWillPop: () async {
-          return true;
-        },
       ),
+      onWillPop: () async {
+        Navigator.pop(context);
+        return true;
+      },
     );
   }
 }
